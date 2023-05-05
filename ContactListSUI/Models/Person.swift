@@ -21,19 +21,24 @@ struct Person: Hashable {
         var persons: [Person] = []
         let dataManager = DataManager.shared
         
+        let names = dataManager.names.shuffled()
+        let surnames = dataManager.surnames.shuffled()
+        let phoneNumbers = dataManager.phoneNumbers.shuffled()
+        let emails = dataManager.emails.shuffled()
+        
         let numbers = min(
-            dataManager.names.count,
-            dataManager.surnames.count,
-            dataManager.phoneNumbers.count,
-            dataManager.emails.count
+            names.count,
+            surnames.count,
+            phoneNumbers.count,
+            emails.count
         )
         
         for number in 0..<numbers {
             let person = Person(
-                name: dataManager.names[number],
-                surname: dataManager.surnames[number],
-                phoneNumbers: dataManager.phoneNumbers[number],
-                email: dataManager.emails[number]
+                name: names[number],
+                surname: surnames[number],
+                phoneNumbers: phoneNumbers[number],
+                email: emails[number]
             )
             
             persons.append(person)

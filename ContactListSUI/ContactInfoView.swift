@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContactInfoView: View {
     let person: Person
-
     
     var body: some View {
         CardView(person: person)

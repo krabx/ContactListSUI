@@ -19,37 +19,26 @@ struct CardView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.white)
-                        .frame(height: 400)
+                        .frame(height: 200)
                     
-                    VStack(spacing: 20) {
+                    VStack() {
                         Image(systemName: "person.fill")
                             .resizable()
-                            .frame(width: 200, height: 200)
+                            .frame(width: 100, height: 100)
                         
                         Divider()
                         
-                        HStack(spacing: 20) {
-                            Image(systemName: "phone")
-                            
-                            Text(person.phoneNumbers)
-                            
-                            Spacer()
-                        }
+                        ContactInfoRowView(personInfo: person.phoneNumbers, image: "phone")
                         
                         Divider()
                         
-                        HStack(spacing: 20) {
-                            Image(systemName: "tray")
-                            
-                            Text(person.email)
-                            
-                            Spacer()
-                        }
+                        ContactInfoRowView(personInfo: person.email, image: "tray")
                     }
                     .padding()
                 }
                 Spacer()
             }
+            .padding()
         }
     }
 }
