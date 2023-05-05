@@ -1,5 +1,5 @@
 //
-//  PersonalInfoView.swift
+//  ContactInfoView.swift
 //  ContactListSUI
 //
 //  Created by Богдан Радченко on 05.05.2023.
@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-struct PersonalInfoView: View {
+struct ContactInfoView: View {
+    let person: Person
+
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        CardView(person: person)
+            .navigationTitle(person.fullName)
     }
 }
 
 struct PersonalInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalInfoView()
+        ContactInfoView(person: Person.getPersons()[0])
     }
 }
