@@ -17,10 +17,7 @@ struct ContactInfoRowView: View {
                 .foregroundColor(.blue)
             
             Text(personInfo)
-            
-            Spacer()
         }
-        .padding(.leading, 20)
     }
 }
 

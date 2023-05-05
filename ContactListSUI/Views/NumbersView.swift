@@ -14,16 +14,15 @@ struct NumbersView: View {
         NavigationStack {
             List(persons, id: \.self) { person in
                 Section(person.fullName) {
-                    HStack(spacing: 20) {
-                        Image(systemName: "phone")
-                            .foregroundColor(.blue)
-                        Text(person.phoneNumbers)
-                    }
-                    HStack(spacing: 20) {
-                        Image(systemName: "tray")
-                            .foregroundColor(.blue)
-                        Text(person.email)
-                    }
+                    ContactInfoRowView(
+                        personInfo: person.phoneNumbers,
+                        image: "phone"
+                    )
+                    
+                    ContactInfoRowView(
+                        personInfo: person.email,
+                        image: "tray"
+                    )
                 }
             }
             .navigationTitle("Contact List")
