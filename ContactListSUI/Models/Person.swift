@@ -19,6 +19,7 @@ struct Person: Hashable {
     
     static func getPersons() -> [Person] {
         var persons: [Person] = []
+        
         let dataManager = DataManager.shared
         
         let names = dataManager.names.shuffled()
